@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SAEN Google Analytics Tracker</title>
+  </head>
+  <body style="margin: 0; padding: 0;">
+  	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  	<script>
+  		(function addAnalytics () {
+  			var queryArr = window.location.search.substring(1).split('&'),
+  					queryObj = {}, currQuery, contentType;
+
+  			function setContentType (isGraphicVisible) {
+  				return isGraphicVisible ? 'contentGroup1' : 'contentGroup2';
+  			}
+
+  			function setContentDetails (source, type) {
+  				return source + '-' + type;
+  			}
+
+  			function setEvents () {
+  				window.addEventListener('message', sendEvent, false);
+  			}
+
+  			function sendEvent (event) {
+  				if (event.origin !== 'http://preview.cmf.expressnews.com' && event.origin !== 'http://www.expressnews.com') return;
+  				ga('send', 'event', setContentDetails(queryObj.graphicSource, queryObj.graphicType), event.data);
+  			}
+
+  			for (var i = 0; i < queryArr.length; i++) {
+  				currQuery = queryArr[i].split('=');
+  				queryObj[currQuery[0]] = currQuery[1];
+  			}
+
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+				ga('create', 'UA-69993027-3', 'auto');
+				ga('set', 'page', queryObj.path);
+				ga('set', setContentType(queryObj.isGraphicVisible), setContentDetails(queryObj.graphicSource, queryObj.graphicType))
+  			ga('send', 'pageview');
+
+  			if (queryObj.isGraphicVisible) setEvents();			
+  		}())
+  	</script>
+  </body>
+</html>

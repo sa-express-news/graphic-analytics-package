@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SAEN Google Analytics Tracker – Test</title>
+  </head>
+  <body>
+    <div class="asset_item asset-item fullwidth wcm-embed-full" data-config-asset-position="3">
+      <div id="saen-analytics-container"></div>
+      
+      <div id="saen-graphic-container">
+        <div id="cps-energy"></div>
+        <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+        <script>
+            var pymParent = new pym.Parent('cps-energy', 'https://s3.amazonaws.com/graphics.expressnews.com/graphics/cps-energy-sources/index.html', {});
+        </script>
+      </div>
+
+      <script src="https://s3.amazonaws.com/graphics.expressnews.com/analytics/saen-analytics-object.js"></script>
+      <script>
+        window.buildExpressNewsAnalyticsObject('graphicBuilder', 'map', 50);
+      </script>
+    </div>
+  </body>
+</html>
