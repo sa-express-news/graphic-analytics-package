@@ -15,7 +15,13 @@ Whether you intend to embed your graphic as a freeform of through the new 'embed
 
 #### Step 1
 
-Take all of your embedded content (and for example's sake, lets say it's a TimelineJS iframe: `<iframe src="http://path/to/file.html"></iframe>`) and wrap it into a div with the id `saen-graphic-container`. Above or below this div, add an empty div with id `saen-analytics-container`. 
+For example's sake, lets say your graphic is a timeline in the form of an iframe you made in TimelineJS. It looks like this:
+
+```html
+<iframe src="http://path/to/file.html"></iframe>
+```
+
+Take all of your embedded content and wrap it into a div with the id `saen-graphic-container`. Above or below this div, add another empty div with the id `saen-analytics-container`. 
 
 Using the iframe example above, your code should look like this:
 
