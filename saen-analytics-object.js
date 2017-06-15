@@ -1,7 +1,7 @@
 (function (window) {
 	function BuildAnalyticsObject(graphicSource, graphicType, percentWithout) {
-		this.graphicSource 	= graphicSource || 'Unspecified Source';
-		this.graphicType 		= graphicType || 'Unspecified Type';
+		this.graphicSource 	= graphicSource || 'unspecified-source';
+		this.graphicType 		= graphicType || 'unspecified-type';
 		this.percentWithout = percentWithout || 0;
 		this.isGraphicShown = this.calculateIfShown();
 		this.init();

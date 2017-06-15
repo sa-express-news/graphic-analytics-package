@@ -12,7 +12,7 @@
   					queryObj = {}, currQuery, contentType;
 
   			function setContentType (isGraphicVisible) {
-  				return isGraphicVisible ? 'contentGroup1' : 'contentGroup2';
+  				return isGraphicVisible === 'yes' ? 'contentGroup1' : 'contentGroup2';
   			}
 
   			function setContentDetails (source, type, event) {

@@ -95,6 +95,6 @@ If you have questions, ask Luke.
 
 The analytics are tracked in Google Analytics under the `saenpremiumeditors@gmail.com` account.
 
-Head to `https://analytics.google.com` and log in. From there click on `CUSTOMIZATION` and then `Dashboards`.
+Head to `https://analytics.google.com` and log in. From there click on `CUSTOMIZATION` and then `Custom Reports`.
 
-On the Dashboards screen, select the `Graphics Dashboard`. All of our graphic analytics are contained here.
+On the Custom Reports screen, select the `Graphic Report`. All of our graphic analytics are contained here.
