@@ -15,8 +15,9 @@
   				return isGraphicVisible ? 'contentGroup1' : 'contentGroup2';
   			}
 
-  			function setContentDetails (source, type) {
-  				return source + '-' + type;
+  			function setContentDetails (source, type, event) {
+  				var event = event ? '-' + event : '';
+  				return source + '-' + type + event;
   			}
 
   			function setEvents () {
@@ -25,7 +26,7 @@
 
   			function sendEvent (event) {
   				if (event.origin !== 'http://preview.cmf.expressnews.com' && event.origin !== 'http://www.expressnews.com') return;
-  				ga('send', 'event', setContentDetails(queryObj.graphicSource, queryObj.graphicType), event.data);
+  				ga('send', 'event', setContentDetails(queryObj.graphicSource, queryObj.graphicType, 'mouseover'), event.data);
   			}
 
   			for (var i = 0; i < queryArr.length; i++) {
